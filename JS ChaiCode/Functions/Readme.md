@@ -19,8 +19,19 @@ If I doesn't pass any argument inside a function, It says `undefined` not `null`
 
 --- 
 # DAY04 
-## Arrow function and this
-- this is used to refer to the current context.
+## this keyword
+- this is used to refer to the current context (under same scope).
+- we cant able to print "this" keyword under fns only and not under any object
+
+### Note: {window} object is the most global object under browser //so we can capture all fns like onclick/formSubmit etc...
 
 
-### Note: {window} object is the most global object under browser //so we can access like onclick/formSubmit
+# DAY05
+- arrow functions are the shorthand to write functions
+- remove the use of "function" keyword 
+- Also able to use implicit return : we assume it gonna return so no need to type return keyword
+
+- In Implicit return: if we use braces{} we have to use return keyword.
+- In Implicit return: if we use parenthesis() we dont have to use return keyword.
+
+- we use this parenthesis to return the object.
