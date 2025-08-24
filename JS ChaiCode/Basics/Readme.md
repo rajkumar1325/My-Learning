@@ -90,5 +90,5 @@ use toFixed() : to generate precision values upto specified digit
 
 
 # String
-- single and double quotes are same
-- backtick ` ` are multiline strings
+- single and double quotes are same // "hello" === 'hello' --> true
+- backtick ` ` are multiline strings //here we can use string interpolations like $
