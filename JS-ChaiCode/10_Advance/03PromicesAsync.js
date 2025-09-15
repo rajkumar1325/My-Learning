@@ -20,7 +20,3 @@ const promiceFive = new Promise( (resolve, reject)=>{
 // }
 // ConsumePromice()
 
-
-
-// USING .THEN() OR catch() 
-fetch()
