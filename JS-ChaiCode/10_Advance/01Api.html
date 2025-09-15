@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the heading</h1>
+</body>
+
+<script>
+    const reqUrl = 'https://api.github.com/users/hiteshchoudhary'
+
+    // create a object of xmlhtmlrequest class
+    const xhr = new XMLHttpRequest()
+
+    xhr.open('GET', reqUrl)
+
+
+    // track the state
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            // console.log(this.responseText)
+            const data = JSON.parse(this.responseText) //converting string(response) into JSON, so to fetch attributes
+
+            console.log(typeof(data))
+            console.log(data.followers) //extract followers from data
+            console.log(data.avatar_url) //extract image-path from data
+
+        }
+    }
+
+    xhr.send()
+
+</script>
+</html>

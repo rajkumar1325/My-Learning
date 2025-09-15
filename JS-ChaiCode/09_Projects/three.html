@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval</title>
+</head>
+<body>
+    <h1>Raj Kumar</h1>
+    <button id="start">Start Interval</button>
+    <button id="stop">Stop Interval</button>
+
+    
+</body>
+
+
+<script>
+    const startPrint = function(){ //function and its reference stored inside `startPrint`
+        console.log("Raj kumar")
+    }
+    // const startVar = setInterval(startPrint, 2000) //prints on console
+
+    let setId;
+    document.querySelector('#start').addEventListener('click', function(){
+        setId = setInterval(startPrint, 2000) //store setId so to pass as a arg into clear interval
+        
+    }) //pass the reference of the setIntercal Function
+
+
+
+
+
+    // now we have to stop it
+    document.querySelector('#stop').addEventListener('click', () => clearInterval(setId))
+</script>
+</html>

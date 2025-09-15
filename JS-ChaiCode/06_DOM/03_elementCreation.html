@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is Heading</h1>
+</body>
+
+<script>
+    // Creating a new element
+    const div = document.createElement('div');
+    console.log(div)
+
+    div.className = "name"; //setting class name
+    div.id = "ids"; //setting id
+    console.log(div);
+
+    // creating a new attribute
+    div.setAttribute("title", "generated title");
+    console.log(div);
+    
+    // setting-styles
+    div.style.backgroundColor = 'red'
+    console.log(div);
+
+
+
+
+    // Adding text inside the page
+    div.innerText = "Chai and code";
+
+    // optimised-tech to add text
+    const addText = document.createTextNode("Chai aur code"); //creating a node
+    div.appendChild(addText); //adding node to the main page
+
+
+
+
+    // Appending div to the main body
+    document.body.appendChild(div)
+
+    console.log(div)
+
+</script>
+</html>

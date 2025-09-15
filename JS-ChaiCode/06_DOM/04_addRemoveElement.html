@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+
+<script>
+
+
+// create a list item --> select item --> append it to the div
+
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}` //passing as a variable
+
+        document.querySelector('.language').appendChild(li); //appending the li variable
+    }
+    addLanguage("python");
+    addLanguage("Dear Raj");
+
+    // NOTE: whenever this method runs, it traverses the complete li before, as it have to go to the end.
+
+
+
+// OPTIMISED APPROACH
+    function addOptiApproach(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+
+    addOptiApproach("TypeScript");
+
+
+
+
+
+
+
+// EDIT
+const secondLang = document.querySelector("li:nth-child(2)");
+// console.log(secondLang)
+// secondLang.innerHTML = "MOJO";
+const newli = document.createElement('li')  //creation of attribute
+newli.textContent = "mojo"   //creating node
+secondLang.replaceWith(newli);
+
+
+// ALTERNATE METHOD 
+    const firstElement = document.querySelector("li:first-child");
+    firstElement.outerHTML = "<li> This </li>"
+
+
+
+
+
+
+
+
+// REMOVE
+    const lastEle = document.querySelector("li:last-child");
+    lastEle.remove() //now we have reference (lastEle) ,so simply remove it
+
+</script>
+
+</html>

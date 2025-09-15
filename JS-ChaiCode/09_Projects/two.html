@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    // // handler: call-back function without name.
+    // setTimeout(function() {
+    //     console.log("Hello I am Hitesh")
+    // }, 2000); //2sec time-out
+
+
+    // using reference
+    const namePrinting = ()=>console.log("Raj Kumar"); //simple arrow function
+    setTimeout(namePrinting, 2000) //pass reference not as a function {namePrinting()--> wrong}
+
+    // changing h1 using DOM with time
+    const changedName = ()=>  document.querySelector('h1').innerHTML = "This is the one" //pass as arrow fn
+    const timeoutVar = setTimeout(changedName, 5000); //store its reference inside timeOutVar so we pass out further
+    
+
+    // stop the timeOut 
+    // stop the timeOutFunction when button clicked
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(timeoutVar)
+        console.log('Stopped')
+    })
+
+
+</script>
+</html>
