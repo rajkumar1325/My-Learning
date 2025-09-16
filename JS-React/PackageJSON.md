@@ -1,6 +1,6 @@
 # creation
 - `npx create-react-app file_name`
-- npx --> node packet eecutor --> just run, and not install it locally
+- npx --> node packet exe   cutor --> just run, and not install it locally
 
 ## Entry Point (package.json)
 - under dependencies --> react/ react-dom -->(used for web)
