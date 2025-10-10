@@ -2,6 +2,7 @@
 ```
   import { useState } from "react";
   function App() {
+    // Note : destructured-variable must be declared under var/const/let keywords
     const [count, setCount] = useState(0);
 
     // declare function using function keyword.
@@ -26,5 +27,6 @@
   }
 
   export default App;
+
 
 ```
