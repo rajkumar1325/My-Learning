@@ -27,10 +27,6 @@ export default function Accordian() {
     )
 }
 
-
+```
 
 <img width="807" height="252" alt="Screenshot 2025-10-11 010303" src="https://github.com/user-attachments/assets/1462f7fa-0b31-4c0e-ac7f-04536e2435c3" />
-
-
-
-```
