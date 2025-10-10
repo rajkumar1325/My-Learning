@@ -28,7 +28,8 @@ export default function Accordian() {
 }
 
 
-<img width="1614" height="504" alt="image" src="https://github.com/user-attachments/assets/5aec185a-5ccf-4d0a-9752-e65b820cff00" />
+
+<img width="807" height="252" alt="Screenshot 2025-10-11 010303" src="https://github.com/user-attachments/assets/1462f7fa-0b31-4c0e-ac7f-04536e2435c3" />
 
 
 
