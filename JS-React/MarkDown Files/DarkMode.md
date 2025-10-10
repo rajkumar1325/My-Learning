@@ -4,6 +4,7 @@
 - make a toggler
 - activate the toggler on event{onClick etc..} 
 
+### Example 1
 ```
 import React from 'react'
 import { useState } from 'react'
@@ -62,3 +63,42 @@ export default function Darkmode() {
 <img width="1920" height="606" alt="image" src="https://github.com/user-attachments/assets/f28be7ff-06df-4bd2-ab53-e095157ab7ac" />
 
 
+### Example 2
+```
+import React, { useState } from 'react'
+
+function Darkmode() {
+    const [myStyle, setmyStyle] = useState(
+        {
+            color:'white'
+        }
+    )
+
+    const toggler = ()=>{
+        if(myStyle.color === 'white'){
+            setmyStyle({
+                color:'red'
+            })
+        }
+        else if(myStyle.color === 'red'){
+            setmyStyle({
+                color:'white'
+            })
+        }
+    }
+  return (
+    <>
+    <div style={{backgroundColor:'#6e6e6eff'}}>
+
+    <h2>Raj Kumar</h2>
+    <h2 style={myStyle}>Works</h2>
+    <h2>Coding</h2>
+
+    <button onClick={toggler}>Click me</button>
+    </div>
+    </>
+  )
+}
+
+export default Darkmode
+```
