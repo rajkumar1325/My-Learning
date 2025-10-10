@@ -8,8 +8,10 @@
 ```
 import { useRef } from "react";
 function App(){
-  const inputTextRef = useRef(null);
+  const inputTextRef = useRef(null); //it gives an object { current: null }
 
+//inputRef.current --> points to the entire DOM element, not its value.
+//<input> has many properties — like .value, .type, .placeholder, .checked, etc...
   const handleClick = ()=>{
     alert("Accessed: " + inputTextRef.current.value); //note : alert only accept 1 argument
   }
