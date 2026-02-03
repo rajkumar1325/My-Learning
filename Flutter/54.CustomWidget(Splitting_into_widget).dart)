@@ -1,0 +1,152 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+
+      body: Column(
+        children: [
+          FirstCategoryItem(), ///function call
+          SecondCategoryItem(),
+          ThirdCategoryItem(),
+          FourthCategoryItem(),
+        ],
+      ),
+    );
+  }
+}
+
+class FirstCategoryItem extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+
+    return Expanded(
+      flex: 2,
+      child: Container(
+        color: Colors.lightGreenAccent,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.all(11.0),
+            child: SizedBox(
+              width: 100,
+              child: CircleAvatar(backgroundColor: Colors.red),
+            ),
+          ),
+          itemCount: 10,
+        ),
+      ),
+    );
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
+class SecondCategoryItem extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 4,
+      child: Container(
+        color: Colors.grey,
+        child: ListView.builder(
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              leading: CircleAvatar(backgroundColor: Colors.lightGreen),
+              title: Text("Name"),
+              trailing: Icon(Icons.delete),
+            ),
+          ),
+          itemCount: 10,
+        ),
+      ),
+    );
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
+class ThirdCategoryItem extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 1,
+      child: Container(
+        color: Colors.red,
+        child: ListView.builder(
+          itemBuilder: (context, indx) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(11),
+                color: Colors.white,
+              ),
+            ),
+          ),itemCount: 10, scrollDirection: Axis.horizontal,
+        ),
+      ),
+    );
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
+class FourthCategoryItem extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 3,
+      child: Container(
+        color: Colors.indigo,
+        child: GridView.builder(
+          itemCount: 5,
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 120, // max width of each item
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          itemBuilder: (context, index) {
+            return Container(color: Colors.amber);
+          },
+        ),
+      ),
+    );
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
