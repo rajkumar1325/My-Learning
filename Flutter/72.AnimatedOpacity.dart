@@ -41,6 +41,8 @@ class MyHomeState extends State<MyHomePage> {
             opacity: _myOpacity,
             duration: Duration(seconds: 1),
 
+            curve: Curves.bounceIn, //Also support curves
+
             child: Container(
               width: 200,
               height: 200,
