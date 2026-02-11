@@ -1,3 +1,5 @@
+// Replace one container with another with an animation
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -27,18 +29,18 @@ class MyHomePage extends StatefulWidget {
 class MyHomeState extends State<MyHomePage> {
   bool isFirst = true; //variable for toggle
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Timer(Duration(seconds: 3), () => Reload() ); //Reload fn call
-  }
-
-  void Reload(){
-    setState(() {
-      isFirst = false;
-    });
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   Timer(Duration(seconds: 3), () => Reload() ); //Reload fn call
+  // }
+  //
+  // void Reload(){
+  //   setState(() {
+  //     isFirst = false;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -61,19 +63,26 @@ class MyHomeState extends State<MyHomePage> {
             secondChild: Image.asset('assets/icons/img1.jpg'),
 
             crossFadeState: isFirst? CrossFadeState.showFirst : CrossFadeState.showSecond,
+
+
+          //   Some more options
+
+          //   sizeCurve: Curves.bounceOut,
+            firstCurve: Curves.easeInOut,
+            secondCurve: Curves.bounceOut,
           ),
 
-          // SizedBox(height: 10,),
-          // ElevatedButton(onPressed: () {
-          //   setState(() {
-          //     if(isFirst){
-          //       isFirst = false;
-          //     }
-          //     else{
-          //       isFirst = true;
-          //     }
-          //   });
-          // }, child: Text("Click to animate"))
+          SizedBox(height: 10,),
+          ElevatedButton(onPressed: () {
+            setState(() {
+              if(isFirst){
+                isFirst = false;
+              }
+              else{
+                isFirst = true;
+              }
+            });
+          }, child: Text("Click to animate"))
         ],
       ),
     );
